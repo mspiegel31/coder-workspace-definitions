@@ -28,7 +28,7 @@ data "coder_workspace" "me" {
 }
 
 variable "docker_image" {
-  default = "codercom/enterprise-base:ubuntu"
+  default = "ghcr.io/mspiegel31/ubuntu-dev-server:latest"
 }
 
 variable "dotfiles_uri" {
@@ -48,7 +48,7 @@ resource "coder_agent" "main" {
 
     # Start Docker
     sudo dockerd &
-    if [ ${var.dotfiles_uri} ];then
+    if [ -n ${var.dotfiles_uri} ];then
       coder dotfiles -y ${var.dotfiles_uri}
     fi
 
