@@ -28,7 +28,7 @@ data "coder_workspace" "me" {
 }
 
 variable "docker_image" {
-  default = "ghcr.io/mspiegel31/ubuntu-dev-server:latest"
+  default = "ghcr.io/mspiegel31/ubuntu-dev-machine:latest"
 }
 
 variable "dotfiles_uri" {
