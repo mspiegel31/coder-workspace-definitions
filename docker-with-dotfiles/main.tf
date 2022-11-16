@@ -48,7 +48,7 @@ resource "coder_agent" "main" {
 
     # Start Docker
     sudo dockerd &
-    if [ ! ${var.dotfiles_uri} ];then
+    if [ ${var.dotfiles_uri} ];then
       coder dotfiles -y ${var.dotfiles_uri}
     fi
 
